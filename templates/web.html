@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WEB_UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+
+  <style>
+    body{
+        margin-top: 5px;
+        background-color: aquamarine;
+    }
+    .card{
+        background-color: blueviolet;
+    }
+    .total{
+        padding-left: 40%;
+
+    }
+    .list-group-item{
+        background-color:gray;
+    }
+    .but{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction:row;
+      justify-content:space-evenly;
+ 
+    }
+
+  </style>
+  <body>
+
+    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="{{data.duslevel}}" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: {{data.duslevel}}%"></div>
+      </div>
+
+    <div class="total">
+    <div class="card" style="width: 18rem;">
+        <img src="https://cdn.pixabay.com/photo/2012/04/28/19/00/trash-44040_960_720.png" class="card-img-top">
+        <div class="card-body">
+          <h5 class="LEVEL MONITOR">Live Data</h5>
+          <p class="card-text">
+            dusbin id -> {{data.id}} <br>              
+            duslevel -> {{data.duslevel}} <br>
+            gas present ->  {{data.gas}} <br>
+            temperature  -> {{data.temp}} <br>
+          </p>
+          
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">location-> {{data.location}}</li>
+          <!-- <li class="list-group-item">weight -> {{data.weight}}</li> -->
+          <li class="list-group-item">humidity -> {{data.humidity}}</li>
+          <li class="list-group-item">latitute -> {{data.lat}}</li>
+          <li class="list-group-item">longtitude -> {{data.long}}</li>
+        </ul>
+      
+      </div>
+    </div>
+
+    <div class="but">
+    
+   <form action="/motopen" >
+    <button type="submit" class="btn btn-primary btn-lg">motor open</button>
+   </form>
+   <br>
+
+   <form action="/motcls"> 
+    <button type="submit" class="btn btn-secondary btn-lg">motor close</button>
+   </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
